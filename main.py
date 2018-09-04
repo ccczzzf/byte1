@@ -32,7 +32,7 @@ def about():
     return template.render()
 
 @app.route('/heatmap')
-def about():
+def heatmap():
     template = JINJA_ENVIRONMENT.get_template('templates/heatmap.html')
     return template.render()
 
