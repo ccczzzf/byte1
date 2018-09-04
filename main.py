@@ -5,7 +5,7 @@ import os
 import jinja2
 import webapp2
 import logging
-
+from flask import send_from_directory
 JINJA_ENVIRONMENT = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
     extensions=['jinja2.ext.autoescape'],
@@ -13,8 +13,7 @@ JINJA_ENVIRONMENT = jinja2.Environment(
 
 # Import the Flask Framework
 from flask import Flask, request
-app = Flask(__name__)
-
+app = Flask(__name__, static_url_path='')
 # Note: We don't need to call run() since our application is embedded within
 # the App Engine WSGI application server.
 
@@ -36,6 +35,10 @@ def heatmap():
     template = JINJA_ENVIRONMENT.get_template('templates/heatmap.html')
     return template.render()
 
+@app.route('/resources/<path:path>')
+def send_static():
+    return send_from_directory('resources', path)
+
 @app.errorhandler(404)
 def page_not_found(e):
     """Return a custom 404 error."""
@@ -46,3 +49,5 @@ def page_not_found(e):
 def application_error(e):
     """Return a custom 500 error."""
     return 'Sorry, unexpected error: {}'.format(e), 500
+
+app.run()
