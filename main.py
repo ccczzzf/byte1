@@ -31,6 +31,11 @@ def about():
     template = JINJA_ENVIRONMENT.get_template('templates/about.html')
     return template.render()
 
+@app.route('/heatmap')
+def about():
+    template = JINJA_ENVIRONMENT.get_template('templates/heatmap.html')
+    return template.render()
+
 @app.errorhandler(404)
 def page_not_found(e):
     """Return a custom 404 error."""
