@@ -13,7 +13,7 @@ JINJA_ENVIRONMENT = jinja2.Environment(
 
 # Import the Flask Framework
 from flask import Flask, request
-app = Flask(__name__, static_url_path='')
+app = Flask(__name__, static_url_path='/resources')
 # Note: We don't need to call run() since our application is embedded within
 # the App Engine WSGI application server.
 
@@ -34,10 +34,6 @@ def about():
 def heatmap():
     template = JINJA_ENVIRONMENT.get_template('templates/heatmap.html')
     return template.render()
-
-@app.route('/resources/<path:path>')
-def send_static():
-    return send_from_directory('resources', path)
 
 @app.errorhandler(404)
 def page_not_found(e):
