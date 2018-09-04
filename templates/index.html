@@ -52,21 +52,91 @@
             answer it. </p>
     </div>
 
-<div class="page-header">
+    <div class="page-header">
         <h1>Question</h1>
-</div>
-<div class="well">
-    <p>The question I am going to ask is is the DGP of different country distributed evenly or biased?</p>
-</div>
-<div class="page-header">
-        <h1>Answer</h1>
-</div>
+    </div>
     <div class="well">
-    <p>No. It's not.</p>
-</div>
+        <p> Are the DGP of different country distributed even or biased?<br>
+            If not even, in which region, the countries in it has more evenly distributed GDP?
+        </p>
+    </div>
+    <div class="page-header">
+        <h1>Answer</h1>
+    </div>
+    <div class="well">
+        <p>I accumulate the GDP in 2017 of every country (region) across the world. The data was attributed to Wikipedia
+            (https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(nominal)).
+            To answer our first question, we should look at a little bit at the data we collected. To better illustrate
+            the skew in the GDP distribution, I drew a histogram from the data to show the distribution (see figure
+            1).</p>
+        <iframe width="600" height="371" seamless frameborder="0" scrolling="no"
+                src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRl9nqtXa9AtfAXFCI_Kl4tdNZl7KJ274i34rXw2CFxSY9401-iPIrda-r6oFhtpTrNPk_nQKrHnOLE/pubchart?oid=2088947730&amp;format=interactive"></iframe>
+        <p>The result shows that there is a high skew in GDP distribution. The U.S. and China is far from other
+            countries in terms of their economy. </p>
+        <p>This question is quite simple to answer. However, given we know that the knowledge that GDP is not
+            distributed evenly, one may ask which region has a more evenly distributed GDP? </p>
+        <p>To understand relation between GDP and geometry, I plotted a heatmap of country distribution as follows. More
+            countries in a region, warmer the color will be.</p>
+        <iframe width="600" height="300" scrolling="no" frameborder="no"
+                src="https://fusiontables.google.com/embedviz?q=select+col3%2C+col4+from+12Hj0my1hNFMXo-VxvUlcd8BLnUj8MxCKOJhSjBqx+limit+1000&amp;viz=HEATMAP&amp;h=true&amp;lat=37.423&amp;lng=-122.084&amp;t=1&amp;z=2&amp;l=col3&amp;y=5&amp;tmplt=6&amp;hmd=true&amp;hmg=%2366ff0000%2C%2393ff00ff%2C%23c1ff00ff%2C%23eeff00ff%2C%23f4e300ff%2C%23f4e300ff%2C%23f9c600ff%2C%23ffaa00ff%2C%23ff7100ff%2C%23ff3900ff%2C%23ff0000ff&amp;hmo=0.65&amp;hmr=34&amp;hmw=0&amp;hml=TWO_COL_LAT_LNG"></iframe>
+        <p>I also plotted a heatmap of heatmap of country distribution, but weighed by the GDP. This heatmap basically
+            reflects how total GDP of a region has. Larger the GDP is in a region, warmer the color will be.</p>
+        <iframe width="600" height="300" scrolling="no" frameborder="no"
+                src="https://fusiontables.google.com/embedviz?q=select+col3%2C+col4%2C+col2+from+12Hj0my1hNFMXo-VxvUlcd8BLnUj8MxCKOJhSjBqx+limit+1000&amp;viz=HEATMAP&amp;h=true&amp;lat=-23.754346365194717&amp;lng=-121.15337275961065&amp;t=1&amp;z=2&amp;l=col3&amp;y=2&amp;tmplt=2&amp;hmd=true&amp;hmg=%2366ff0000%2C%2393ff00ff%2C%23c1ff00ff%2C%23eeff00ff%2C%23f4e300ff%2C%23f4e300ff%2C%23f9c600ff%2C%23ffaa00ff%2C%23ff7100ff%2C%23ff3900ff%2C%23ff0000ff&amp;hmo=0.82&amp;hmr=50&amp;hmw=2&amp;hml=TWO_COL_LAT_LNG"></iframe>
+        <p> For one region we want to investigate, we see the heatmap of it in both figures. If the trends of color are
+            in the same direction, we can say that GDP is relatively evenly distributed. Taking western Europe for
+            example. Two figures looks basically the same.</p>
 
-<iframe width="600" height="600" scrolling="no" frameborder="no" src="https://fusiontables.google.com/embedviz?q=select+col3%2C+col4%2C+col2+from+12Hj0my1hNFMXo-VxvUlcd8BLnUj8MxCKOJhSjBqx+limit+1000&amp;viz=HEATMAP&amp;h=true&amp;lat=-23.754346365194717&amp;lng=-121.15337275961065&amp;t=1&amp;z=2&amp;l=col3&amp;y=2&amp;tmplt=2&amp;hmd=true&amp;hmg=%2366ff0000%2C%2393ff00ff%2C%23c1ff00ff%2C%23eeff00ff%2C%23f4e300ff%2C%23f4e300ff%2C%23f9c600ff%2C%23ffaa00ff%2C%23ff7100ff%2C%23ff3900ff%2C%23ff0000ff&amp;hmo=0.82&amp;hmr=50&amp;hmw=2&amp;hml=TWO_COL_LAT_LNG"></iframe>
-<iframe width="600" height="600" scrolling="no" frameborder="no" src="https://fusiontables.google.com/embedviz?q=select+col3%2C+col4+from+12Hj0my1hNFMXo-VxvUlcd8BLnUj8MxCKOJhSjBqx+limit+1000&amp;viz=HEATMAP&amp;h=true&amp;lat=37.423&amp;lng=-122.084&amp;t=1&amp;z=2&amp;l=col3&amp;y=5&amp;tmplt=6&amp;hmd=true&amp;hmg=%2366ff0000%2C%2393ff00ff%2C%23c1ff00ff%2C%23eeff00ff%2C%23f4e300ff%2C%23f4e300ff%2C%23f9c600ff%2C%23ffaa00ff%2C%23ff7100ff%2C%23ff3900ff%2C%23ff0000ff&amp;hmo=0.65&amp;hmr=34&amp;hmw=0&amp;hml=TWO_COL_LAT_LNG"></iframe></div> <!-- /page-header -->
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Heatmap (no weighting)</h3>
+                    </div>
+                    <div class="panel-body">
+                        <img src="../resources/P1_no_weight.png" height="366" width="224"/>
+                    </div>
+                </div>
+            </div><!-- /.col-sm-4 -->
+            <div class="col-sm-3">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Heatmap (weighed by GDP)</h3>
+                    </div>
+                    <div class="panel-body">
+                        <img src="../resources/P1_weight.png" height="366" width="224"/>
+                    </div>
+                </div>
+            </div><!-- /.col-sm-4 -->
+        </div>
+
+        <p>However, when we look the east of the previous region. </p>
+
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Heatmap (no weighting)</h3>
+                    </div>
+                    <div class="panel-body">
+                        <img src="../resources/P2_no_weight.png" height="366" width="224"/>
+                    </div>
+                </div>
+            </div><!-- /.col-sm-4 -->
+            <div class="col-sm-3">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Heatmap (weighed by GDP)</h3>
+                    </div>
+                    <div class="panel-body">
+                        <img src="../resources/P2_weight.png" height="366" width="224"/>
+                    </div>
+                </div>
+            </div><!-- /.col-sm-4 -->
+        </div>
+
+        <p>The trends are different in the left part and right part. This means that basically countries in east eurpoe has less GDP than their western neighbors.</p>
+    </div>
 </div> <!-- /container -->
 
 
