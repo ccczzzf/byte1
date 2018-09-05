@@ -5,14 +5,13 @@ import os
 import jinja2
 import webapp2
 import logging
-from flask import send_from_directory
 JINJA_ENVIRONMENT = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
     extensions=['jinja2.ext.autoescape'],
     autoescape=True)
 
 # Import the Flask Framework
-from flask import Flask, request
+from flask import Flask
 app = Flask(__name__, static_url_path='/resources')
 # Note: We don't need to call run() since our application is embedded within
 # the App Engine WSGI application server.
@@ -24,7 +23,6 @@ def index():
     # render the web page with the data 
     return template.render()
 
-    
 @app.route('/about')
 def about():
     template = JINJA_ENVIRONMENT.get_template('templates/about.html')
@@ -45,5 +43,3 @@ def page_not_found(e):
 def application_error(e):
     """Return a custom 500 error."""
     return 'Sorry, unexpected error: {}'.format(e), 500
-
-app.run()
